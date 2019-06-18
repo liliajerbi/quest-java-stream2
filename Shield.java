@@ -17,10 +17,9 @@ public class Shield {
         // TODO 1 : map names to agents list
         List<Agent> agents = names.stream()
         .map(name -> {
-            String[] split = name.split(" ");
-            String firstName = split[0];
-            String lastName = split[1];
-            Agent agent = new Agent(firstName, lastName);
+            String[] split = name.split(" ",2);
+            Agent agent = new Agent(split[0], split[1]);
+
         return agent;
 })
 .collect(Collectors.toList());
